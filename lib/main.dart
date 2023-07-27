@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'home_page.dart';
 import 'menu_items.dart';
 import 'map_view.dart';
 import 'search_page.dart';
 import 'booking.dart';
+import 'start_page.dart';
 
 void main() {
   runApp(EntryPage());
@@ -32,43 +34,26 @@ class _EntryPageState extends State<EntryPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         body: pages[selectedIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: selectedIndex,
+        bottomNavigationBar: CurvedNavigationBar(
+          index: selectedIndex,
+          height: 50,
+          backgroundColor: Colors.transparent,
+          color: Colors.teal,
+          buttonBackgroundColor: Colors.teal,
+          items: <Widget>[
+            Icon(Icons.home, color: Colors.white,),
+            Icon(Icons.search, color: Colors.white,),
+            Icon(Icons.map_sharp, color: Colors.white,),
+            Icon(Icons.book_outlined, color: Colors.white,),
+            Icon(Icons.menu, color: Colors.white,),
+          ],
           onTap: (index) {
             setState(() {
               selectedIndex = index;
             });
           },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home,
-                  color: selectedIndex == 0 ? Colors.teal : Colors.grey),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search,
-                  color: selectedIndex == 1 ? Colors.teal : Colors.grey),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.map_sharp,
-                  color: selectedIndex == 2 ? Colors.teal : Colors.grey),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book_outlined,
-                  color: selectedIndex == 3 ? Colors.teal : Colors.grey),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu,
-                  color: selectedIndex == 4 ? Colors.teal : Colors.grey),
-              label: '',
-            ),
-          ],
         ),
       ),
     );

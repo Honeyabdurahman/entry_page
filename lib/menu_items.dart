@@ -19,12 +19,12 @@ class _MenuPageState extends State<MenuPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/profile_picture.png'),
             ),
             const SizedBox(height: 16.0),
-            Text(
+            const Text(
               'John Doe',
               style: TextStyle(
                 fontSize: 24.0,
@@ -32,7 +32,7 @@ class _MenuPageState extends State<MenuPage> {
               ),
             ),
             const SizedBox(height: 8.0),
-            Text(
+            const Text(
               'johndoe@example.com',
               style: TextStyle(
                 fontSize: 16.0,
