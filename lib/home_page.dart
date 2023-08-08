@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'booking.dart';
+import 'main.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -238,10 +240,14 @@ class HomePage extends StatelessWidget {
                           child: Row(
                             children: [
                               Text("Craft shop", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(
-                                onPressed: (){
-
-                                },
+                              MaterialButton(onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MainPage(selectedPageIndex: 3), // Pass the index of BookingPage
+                                  ),
+                                );
+                              },
                                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,
                                 ),
                               ),

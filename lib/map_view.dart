@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapView extends StatefulWidget {
   const MapView({super.key});
@@ -8,6 +9,11 @@ class MapView extends StatefulWidget {
 }
 
 class _MapViewState extends State<MapView> {
+  static const _initialCameraPosition = CameraPosition(
+    target: LatLng(1.2, 32.5), // Set the initial center of the map
+    zoom: 7, // Initial zoom level
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +30,13 @@ class _MapViewState extends State<MapView> {
           ),
         ),
         Expanded(
-          child: Image.asset("images/map_view.PNG"),
+          child: GoogleMap(
+            mapType: MapType.normal,
+            myLocationButtonEnabled: false,
+            zoomControlsEnabled: false,
+            initialCameraPosition: _initialCameraPosition,
+            // Add other map options and markers as needed
+          ),
         ),
         SizedBox(
           height: 10.0,
@@ -33,3 +45,4 @@ class _MapViewState extends State<MapView> {
     );
   }
 }
+

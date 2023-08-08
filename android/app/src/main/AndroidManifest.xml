@@ -3,6 +3,12 @@
         android:label="entry_page"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!--Google Maps API key-->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDVBOdibEyEkPIJD7Ir4zvibiLP_Dh04Ws"/>
+        <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+
         <uses-permission andriod:name="android.permission.INTERNET"/>
         <uses-permission andriiod:name="android.permission.ACCESS_FINE_LOCATION"/>
         <activity

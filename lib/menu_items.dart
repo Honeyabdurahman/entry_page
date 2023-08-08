@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'menu/settings.dart';
+import 'menu/credits.dart';
+import 'menu/termsandconditions.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -43,6 +46,7 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.settings),
               title: const Text('Settings'),
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()),);
                 // Handle settings navigation
               },
             ),
@@ -50,6 +54,7 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.credit_card),
               title: const Text('Credits'),
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Credits(),),);
                 // Handle credits navigation
               },
             ),
@@ -57,6 +62,8 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.info),
               title: const Text('Terms and Conditions'),
               onTap: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TermsandConditions(),),);
                 // Handle terms and conditions navigation
               },
             ),
