@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "sarah's_shop.dart";
 
 class BookingPage extends StatefulWidget {
   const BookingPage({super.key});
@@ -67,10 +68,33 @@ class _BookingPageState extends State<BookingPage> {
 
                     ],
                   ),
-                  Text('The Mountain traveller',),
+                  Text("Sarah's Craft shop",),
                   Text("Lorem Ipsum is simply dummy text of the printing "
                       "and typesetting industry. Lorem Ipsum has been the industry's standard "
                       "dummy text ever since the 1500s, when an unknown printer took", ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SarahsShop(),
+                          ),
+                        );
+                      },
+                      child: MaterialButton(
+                        onPressed: () {
+                          // Add any onPressed functionality if needed
+                        },
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.lightGreen,
+                        ),
+                      ),
+                    ),
+                  ),
+
 
 
                 ],
@@ -85,7 +109,7 @@ class _BookingPageState extends State<BookingPage> {
               borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("images/craftshop.jpg"),
+                image: AssetImage("images/booking/safari shop.jpg"),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
                   BlendMode.srcOver,
@@ -119,7 +143,7 @@ class _BookingPageState extends State<BookingPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           image: DecorationImage(
-                            image: AssetImage("images/craftshop.jpg"),
+                            image: AssetImage("images/booking/safari shop.jpg"),
                             colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.4),
                               BlendMode.srcOver,
@@ -127,13 +151,23 @@ class _BookingPageState extends State<BookingPage> {
                           ),
                         ),
                       ),
-
                     ],
                   ),
-                  Text('The Mountain traveller',),
+                  Text('Safari shop',),
                   Text("Lorem Ipsum is simply dummy text of the printing "
                       "and typesetting industry. Lorem Ipsum has been the industry's standard "
                       "dummy text ever since the 1500s, when an unknown printer took", ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: MaterialButton(
+
+                      onPressed: (){
+
+                      },
+                      child: Icon(Icons.arrow_forward_ios, color: Colors.lightGreen,
+                      ),
+                    ),
+                  ),
 
 
                 ],
@@ -149,7 +183,7 @@ class _BookingPageState extends State<BookingPage> {
               borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage("images/craftshop.jpg"),
+                image: AssetImage("images/booking/mountain traveller.jpg"),
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.4),
                   BlendMode.srcOver,
@@ -183,7 +217,7 @@ class _BookingPageState extends State<BookingPage> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           image: DecorationImage(
-                            image: AssetImage("images/craftshop.jpg"),
+                            image: AssetImage("images/booking/mountain traveller.jpg"),
                             colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.4),
                               BlendMode.srcOver,
@@ -198,6 +232,17 @@ class _BookingPageState extends State<BookingPage> {
                   Text("Lorem Ipsum is simply dummy text of the printing "
                       "and typesetting industry. Lorem Ipsum has been the industry's standard "
                       "dummy text ever since the 1500s, when an unknown printer took", ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: MaterialButton(
+
+                      onPressed: (){
+
+                      },
+                      child: Icon(Icons.arrow_forward_ios, color: Colors.lightGreen,
+                      ),
+                    ),
+                  ),
 
 
                 ],

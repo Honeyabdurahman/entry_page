@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapView extends StatefulWidget {
   const MapView({super.key});
@@ -24,7 +25,10 @@ class _MapViewState extends State<MapView> {
           ),
         ),
         Expanded(
-          child: Image.asset("images/map_view.PNG"),
+          child: GoogleMap(initialCameraPosition: CameraPosition(
+            target: LatLng(37.7748, -122.41942),
+            zoom: 12,
+          ),),
         ),
         SizedBox(
           height: 10.0,
