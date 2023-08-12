@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'booking.dart';
 import 'main.dart';
+import 'from_home/game_stations.dart';
+import 'from_home/malls.dart';
+import 'from_home/fun.dart';
+import 'from_home/night_life.dart';
+import 'from_home/clubs.dart';
+import 'from_home/crafts.dart';
+import 'from_home/concerts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatelessWidget {
@@ -211,6 +218,7 @@ class HomePage extends StatelessWidget {
                               Text("Want fun?", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
                               MaterialButton(
                                 onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => FunAreas(),),);
 
                                 },
                                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,
@@ -240,13 +248,10 @@ class HomePage extends StatelessWidget {
                           child: Row(
                             children: [
                               Text("Craft shop", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MainPage(selectedPageIndex: 3), // Pass the index of BookingPage
-                                  ),
-                                );
+                              MaterialButton(onPressed: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => CraftsPage()), // Replace with your Hotels page widget
+                              );
                               },
                                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,
                                 ),
@@ -284,16 +289,16 @@ class HomePage extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  _buildGridItem(Icons.hotel, 'Hotels', "images/hotel.jpg"),
-                  _buildGridItem(Icons.park, 'Parks', "images/park.jpg"),
-                  _buildGridItem(Icons.local_bar, 'Clubs', "images/clubs.jpg"),
-                  _buildGridItem(Icons.insert_photo_outlined, 'Craft shops', "images/zoos.jpg"),
-                  _buildGridItem(Icons.nature, 'National Parks', "images/nature.jpg"),
-                  _buildGridItem(Icons.nightlife, 'Nightlife', "images/nightlife.jpg"),
-                  _buildGridItem(Icons.museum, 'Amusement Parks', "images/park.jpg"),
-                  _buildGridItem(Icons.music_note, 'Concerts', "images/concerts.jpg"),
-                  _buildGridItem(Icons.shopping_bag, 'Malls', "images/malls.jpg"),
-                  _buildGridItem(Icons.gamepad, 'Game Stations', "images/gamezone.jpg"),
+                  _buildGridItem(context, Icons.hotel, 'Hotels', "images/hotel.jpg"),
+                  _buildGridItem(context, Icons.park, 'Parks', "images/park.jpg"),
+                  _buildGridItem(context, Icons.local_bar, 'Clubs', "images/clubs.jpg"),
+                  _buildGridItem(context, Icons.insert_photo_outlined, 'Craft shops', "images/zoos.jpg"),
+                  _buildGridItem(context, Icons.nature, 'National Parks', "images/nature.jpg"),
+                  _buildGridItem(context, Icons.nightlife, 'Nightlife', "images/nightlife.jpg"),
+                  _buildGridItem(context, Icons.museum, 'Amusement Parks', "images/park.jpg"),
+                  _buildGridItem(context, Icons.music_note, 'Concerts', "images/concerts.jpg"),
+                  _buildGridItem(context, Icons.shopping_bag, 'Malls', "images/malls.jpg"),
+                  _buildGridItem(context, Icons.gamepad, 'Game Stations', "images/gamezone.jpg"),
                 ],
               ),
             ),
@@ -303,11 +308,11 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildGridItem(IconData icon, String title, String imagePath,) {
+  Widget _buildGridItem(BuildContext context, IconData icon, String title, String imagePath,) {
     return Card(
       child: InkWell(
         onTap: () {
-          // Handle the tap on each grid item
+          _navigateToPage(context, title); // Call the navigation function with the title
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -325,6 +330,65 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  void _navigateToPage(BuildContext context, String title) {
+    switch (title) {
+      case 'Hotels':
+      // Navigate to the Hotels page
+        break;
+      case 'Parks':
+      // Navigate to the Parks page
+        break;
+      case 'Clubs':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ClubMap()), // Replace with your Hotels page widget
+        );
+      // Navigate to the Clubs page
+        break;
+      case 'Craft shops':
+      // Navigate to the Craft shops page
+        break;
+      case 'National Parks':
+      // Navigate to the National Parks page
+        break;
+      case 'Nightlife':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => NightLife()), // Replace with your Hotels page widget
+        );
+      // Navigate to the Nightlife page
+        break;
+      case 'Amusement Parks':
+      // Navigate to the Amusement Parks page
+        break;
+      case 'Concerts':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Concerts()), // Replace with your Hotels page widget
+        );
+      // Navigate to the Concerts page
+        break;
+      case 'Malls':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MallView()), // Replace with your Hotels page widget
+        );
+      // Navigate to the Malls page
+        break;
+      case 'Game Stations':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => GameStations()), // Replace with your Hotels page widget
+        );
+      // Navigate to the Game Stations page
+        break;
+      default:
+      // Handle other cases or show an error message
+        break;
+    }
+  }
+
 }
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});

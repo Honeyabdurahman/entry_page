@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'menu/settings.dart';
 import 'menu/credits.dart';
 import 'menu/termsandconditions.dart';
+import 'menu/profile.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -22,9 +23,14 @@ class _MenuPageState extends State<MenuPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/profile_picture.png'),
+            MaterialButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context)=> ProfileChange()),);
+              },
+              child: const CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('assets/profile_picture.png'),
+              ),
             ),
             const SizedBox(height: 16.0),
             const Text(

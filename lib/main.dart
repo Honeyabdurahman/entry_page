@@ -8,8 +8,21 @@ import 'booking.dart';
 import 'start_page.dart';
 
 void main() {
-  runApp(EntryPage());
+  runApp(MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.light(), // Default light theme
+      darkTheme: ThemeData.dark(), // Default dark theme
+      themeMode: ThemeMode.system, // Let the system decide the theme mode
+      home: EntryPage(),
+    );
+  }
+}
+
 
 class EntryPage extends StatefulWidget {
   const EntryPage({Key? key}) : super(key: key);
@@ -19,6 +32,7 @@ class EntryPage extends StatefulWidget {
 }
 
 class _EntryPageState extends State<EntryPage> {
+
   int selectedIndex = 0;
 
   final List<Widget> pages = [

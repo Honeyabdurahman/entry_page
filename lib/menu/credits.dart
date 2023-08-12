@@ -10,14 +10,20 @@ class Credits extends StatefulWidget {
 class _CreditsState extends State<Credits> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(child: Text("Developers"),),
-          Text("Honey Abdurahman",),
-          Text("Ojok Amos",),
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Settings'),
+        backgroundColor: Colors.teal,
+      ),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Text("Developers", ),),
+            Text("Honey Abdurahman", ),
+            Text("Ojok Amos",),
+          ],
+        ),
       ),
     );
   }
