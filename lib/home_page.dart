@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                   ];
 
                   List<String> descriptions = [
-                    "Parks",
+                    "Backpacks",
                     "Tour shop",
                     "Crafts",
                     "Tourguide",
