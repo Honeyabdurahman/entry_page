@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:entry_page/main.dart';
-import 'package:entry_page/from_home/crafts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:entry_page/checkout/tourguide_checkout.dart';
 
 class TourguideDetail extends StatefulWidget {
   const TourguideDetail({super.key});
@@ -19,7 +18,8 @@ class _TourguideDetailState extends State<TourguideDetail> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Tourguide"),
-        backgroundColor: Colors.teal,),
+        backgroundColor: Colors.teal,
+      ),
       body: Column(
         children: [
           Expanded(
@@ -40,7 +40,6 @@ class _TourguideDetailState extends State<TourguideDetail> {
               },
             ),
           ),
-
           Expanded(
             child: Center(
               child: Container(
@@ -49,7 +48,7 @@ class _TourguideDetailState extends State<TourguideDetail> {
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage("images/tourguide.jpg"),
+                    image: AssetImage("images/booking/mountain traveller.jpg"),
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4),
                       BlendMode.srcOver,
@@ -77,14 +76,13 @@ class _TourguideDetailState extends State<TourguideDetail> {
                           Icon(Icons.location_on, color: Colors.lightGreen),
                           Text("Kampala, Uganda, ", style: TextStyle(fontSize: 10)),
                           CircleAvatar(
-                            foregroundImage: AssetImage("images/booking/mountain traveller.jpg"),
+                            foregroundImage: AssetImage("images/tourguide.jpg"),
                           ),
                         ],
                       ),
                       Text("Johnson Tours", style: TextStyle(fontSize: 12.0)),
                       Text(
-                        "Lorem Ipsum is simply dummy text of the printing "
-                            "and typesetting industry. Lorem Ipsum has been the industry's standard ",
+                        "Certified mountain guide specialized in organizing and leading breathtaking mountain tours.",
                         style: TextStyle(fontSize: 10.0),
                       ),
                       Align(
@@ -94,11 +92,33 @@ class _TourguideDetailState extends State<TourguideDetail> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CraftsPage(),
+                                builder: (context) => TourGuideCheckout(
+                                  selectedTours: [
+                                    TourItem(
+                                      name: 'Mountain Expedition',
+                                      price: 150.00,
+                                      imagePath: 'images/tourguide.jpg',
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },
-                          child: Icon(Icons.arrow_forward_ios, color: Colors.lightGreen),
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.teal,
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text("Book"),
+                                  Icon(Icons.arrow_forward_ios, color: Colors.white),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],

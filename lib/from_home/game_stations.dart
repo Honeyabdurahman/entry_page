@@ -99,7 +99,7 @@ class _GameStationsState extends State<GameStations> {
 
                       onPressed: (){
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MountainTraveller()
+                          MaterialPageRoute(builder: (context) => TourguideDetail()
                           ),
                         );
 
@@ -182,7 +182,7 @@ class _GameStationsState extends State<GameStations> {
                     child: MaterialButton(
                       onPressed: (){
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MountainTraveller()
+                          MaterialPageRoute(builder: (context) => TourguideDetail()
                           ),
                         );
 
@@ -266,7 +266,7 @@ class _GameStationsState extends State<GameStations> {
 
                       onPressed: (){
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => MountainTraveller()
+                          MaterialPageRoute(builder: (context) => TourguideDetail()
                           ),
                         );
 

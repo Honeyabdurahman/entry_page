@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:entry_page/from_home/crafts.dart';
 
-class CraftsCheckout extends StatelessWidget {
-  final List<CraftItem> cartItems;
+class TourGuideCheckout extends StatelessWidget {
+  final List<TourItem> selectedTours; // List of selected tours
 
-  CraftsCheckout({required this.cartItems});
+  TourGuideCheckout({required this.selectedTours});
 
   @override
   Widget build(BuildContext context) {
-    double totalAmount = cartItems.map((item) => item.price).reduce((sum, price) => sum + price);
+    double totalAmount = selectedTours.fold(0, (sum, item) => sum + item.price);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: Text('Tour Guide Checkout'),
         backgroundColor: Colors.teal,
       ),
       body: Padding(
@@ -21,37 +20,51 @@ class CraftsCheckout extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Items in Cart:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              'Selected Tours:',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: cartItems.length,
-              itemBuilder: (context, index) {
-                final cartItem = cartItems[index];
-                return ListTile(
-                  title: Text(cartItem.name),
-                  subtitle: Text('\$${cartItem.price.toStringAsFixed(2)}'),
-                );
-              },
+            Expanded(
+              child: ListView.builder(
+                itemCount: selectedTours.length,
+                itemBuilder: (context, index) {
+                  final tourItem = selectedTours[index];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(tourItem.imagePath),
+                    ),
+                    title: Text(tourItem.name),
+                    subtitle: Text('\$${tourItem.price.toStringAsFixed(2)}'),
+                  );
+                },
+              ),
             ),
-            SizedBox(height: 20),
-            Text(
-              'Total Amount: \$${totalAmount.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Total Amount:',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(width: 10),
+                Text(
+                  '\$$totalAmount',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Handle the payment process here
-                // You can navigate to the payment gateway or show a payment dialog
-                // based on your application's requirements.
+                // Implement your payment logic here
+                // You can navigate to a payment gateway or show a confirmation dialog
               },
               child: Text('Proceed to Payment'),
               style: ElevatedButton.styleFrom(
                 primary: Colors.teal, // Set background color
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                textStyle: TextStyle(fontSize: 16),
               ),
             ),
           ],
@@ -59,4 +72,12 @@ class CraftsCheckout extends StatelessWidget {
       ),
     );
   }
+}
+
+class TourItem {
+  final String name;
+  final double price;
+  final String imagePath;
+
+  TourItem({required this.name, required this.price, required this.imagePath});
 }

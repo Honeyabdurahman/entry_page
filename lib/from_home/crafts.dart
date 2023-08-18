@@ -11,17 +11,17 @@ class _CraftsPageState extends State<CraftsPage> {
     CraftItem(
       name: 'Handcrafted Wooden Bowl',
       price: 25.99,
-      imagePath: 'assets/wooden_bowl.jpg',
+      imagePath: 'images/crafts/woodenbowl.webp',
     ),
     CraftItem(
       name: 'Colorful Beaded Necklace',
       price: 15.49,
-      imagePath: 'assets/beaded_necklace.jpg',
+      imagePath: 'images/crafts/beadednecklace.jpg',
     ),
     CraftItem(
       name: 'Artisan Clay Mug',
       price: 18.75,
-      imagePath: 'assets/clay_mug.jpg',
+      imagePath: 'images/crafts/claymug.webp',
     ),
     // Add more craft items to the list
   ];
