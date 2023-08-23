@@ -9,6 +9,7 @@ import 'from_home/clubs.dart';
 import 'from_home/crafts.dart';
 import 'from_home/concerts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'home_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,38 +21,37 @@ class HomePage extends StatelessWidget {
         preferredSize: Size.fromHeight(90.0),
         child: HomeAppBar(),
       ),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-        Stack(
-        children: [
-        Container(
-          height: 350.0,
-          child: Image.asset(
-            'images/zoo final.jpg', // Replace with your visually appealing header image
-            fit: BoxFit.cover,
-          ),
-        ),
-        Positioned(
-          bottom: 16.0,
-          left: 16.0,
-          child: Text(
-            'Uganda: Land of Beauty and Adventure', // Your clear and concise tagline
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
+            Stack(
+              children: [
+                Container(
+                  height: 350.0,
+                  child: Image.asset(
+                    'images/zoo final.jpg', // Replace with your visually appealing header image
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  bottom: 16.0,
+                  left: 16.0,
+                  child: Text(
+                    'Uganda: Land of Beauty and Adventure', // Your clear and concise tagline
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),
-        ],
-        ),
             const SizedBox(
               height: 28.0,
             ),
             // Banner or Image Carousel
-
 
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -101,7 +101,8 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(15.0),
                         image: DecorationImage(
-                          image: AssetImage(images[index]), // Use the image from the list
+                          image: AssetImage(
+                              images[index]), // Use the image from the list
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
                             Colors.black.withOpacity(0.7),
@@ -112,7 +113,8 @@ class HomePage extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.bottomLeft,
                         child: Text(
-                          descriptions[index], // Use the description from the list
+                          descriptions[
+                              index], // Use the description from the list
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "Merienda",
@@ -138,24 +140,30 @@ class HomePage extends StatelessWidget {
                         color: Colors.lightGreenAccent,
                         boxShadow: [
                           BoxShadow(
-                              color: Colors.white10,
-                              blurRadius: 7.0,
+                            color: Colors.white10,
+                            blurRadius: 7.0,
                           ),
                         ],
                       ),
                       child: Center(
-                          child: Row(
-                            children: [
-                              Text("Tourguide", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(
-                                onPressed: (){
-
-                                },
-                                  child: Icon(Icons.arrow_forward_ios, color: Colors.white,
-                                  ),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Tourguide",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Merienda",
                               ),
-                            ],
-                          ),
+                            ),
+                            MaterialButton(
+                              onPressed: () {},
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -168,27 +176,27 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(7.0),
                           color: Colors.blueGrey,
                           boxShadow: [
-                            BoxShadow(
-                                color: Colors.white10,
-                                blurRadius: 7.0
-                            ),
-                          ]
-                      ),
+                            BoxShadow(color: Colors.white10, blurRadius: 7.0),
+                          ]),
                       child: Center(
                           child: Row(
-                            children: [
-                              Text("Find destinations", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(
-                                onPressed: (){
-
-                                },
-                                child: Icon(Icons.arrow_forward_ios, color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          )
-                      ),
-
+                        children: [
+                          Text(
+                            "Find destinations",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Merienda",
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
                     ),
                   ),
                 ],
@@ -206,27 +214,34 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(7.0),
                           color: Colors.orange,
                           boxShadow: [
-                            BoxShadow(
-                                color: Colors.white10,
-                                blurRadius: 7.0
-                            )
-                          ]
-                      ),
+                            BoxShadow(color: Colors.white10, blurRadius: 7.0)
+                          ]),
                       child: Center(
                           child: Row(
-                            children: [
-                              Text("Want fun?", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(
-                                onPressed: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => FunAreas(),),);
-
-                                },
-                                child: Icon(Icons.arrow_forward_ios, color: Colors.white,
+                        children: [
+                          Text(
+                            "Want fun?",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: "Merienda",
+                            ),
+                          ),
+                          MaterialButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FunAreas(),
                                 ),
-                              ),
-                            ],
-                          )
-                      ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
                     ),
                   ),
                   Expanded(
@@ -238,34 +253,40 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(7.0),
                           color: Colors.lightGreen,
                           boxShadow: [
-                            BoxShadow(
-                                color: Colors.white10,
-                                blurRadius: 7.0
-                            ),
-                          ]
-                      ),
+                            BoxShadow(color: Colors.white10, blurRadius: 7.0),
+                          ]),
                       child: Center(
-                          child: Row(
-                            children: [
-                              Text("Craft shop", style: TextStyle(color: Colors.white, fontFamily: "Merienda",),),
-                              MaterialButton(onPressed: () {Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => CraftsPage()), // Replace with your Hotels page widget
-                              );
-                              },
-                                child: Icon(Icons.arrow_forward_ios, color: Colors.white,
-                                ),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Craft shop",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Merienda",
                               ),
-                            ],
-                          ),
+                            ),
+                            MaterialButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CraftsPage()), // Replace with your Hotels page widget
+                                );
+                              },
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-
                     ),
                   ),
                 ],
               ),
             ),
-
 
             // Grid or List of Activities and Events
 
@@ -289,16 +310,26 @@ class HomePage extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  _buildGridItem(context, Icons.hotel, 'Hotels', "images/hotel.jpg"),
-                  _buildGridItem(context, Icons.park, 'Parks', "images/park.jpg"),
-                  _buildGridItem(context, Icons.local_bar, 'Clubs', "images/clubs.jpg"),
-                  _buildGridItem(context, Icons.insert_photo_outlined, 'Craft shops', "images/zoos.jpg"),
-                  _buildGridItem(context, Icons.nature, 'National Parks', "images/nature.jpg"),
-                  _buildGridItem(context, Icons.nightlife, 'Nightlife', "images/nightlife.jpg"),
-                  _buildGridItem(context, Icons.museum, 'Amusement Parks', "images/park.jpg"),
-                  _buildGridItem(context, Icons.music_note, 'Concerts', "images/concerts.jpg"),
-                  _buildGridItem(context, Icons.shopping_bag, 'Malls', "images/malls.jpg"),
-                  _buildGridItem(context, Icons.gamepad, 'Game Stations', "images/gamezone.jpg"),
+                  _buildGridItem(
+                      context, Icons.hotel, 'Hotels', "images/hotel.jpg"),
+                  _buildGridItem(
+                      context, Icons.park, 'Parks', "images/park.jpg"),
+                  _buildGridItem(
+                      context, Icons.local_bar, 'Clubs', "images/clubs.jpg"),
+                  _buildGridItem(context, Icons.insert_photo_outlined,
+                      'Craft shops', "images/zoos.jpg"),
+                  _buildGridItem(context, Icons.nature, 'National Parks',
+                      "images/nature.jpg"),
+                  _buildGridItem(context, Icons.nightlife, 'Nightlife',
+                      "images/nightlife.jpg"),
+                  _buildGridItem(context, Icons.museum, 'Amusement Parks',
+                      "images/park.jpg"),
+                  _buildGridItem(context, Icons.music_note, 'Concerts',
+                      "images/concerts.jpg"),
+                  _buildGridItem(
+                      context, Icons.shopping_bag, 'Malls', "images/malls.jpg"),
+                  _buildGridItem(context, Icons.gamepad, 'Game Stations',
+                      "images/gamezone.jpg"),
                 ],
               ),
             ),
@@ -308,11 +339,17 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildGridItem(BuildContext context, IconData icon, String title, String imagePath,) {
+  Widget _buildGridItem(
+    BuildContext context,
+    IconData icon,
+    String title,
+    String imagePath,
+  ) {
     return Card(
       child: InkWell(
         onTap: () {
-          _navigateToPage(context, title); // Call the navigation function with the title
+          _navigateToPage(
+              context, title); // Call the navigation function with the title
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -334,62 +371,80 @@ class HomePage extends StatelessWidget {
   void _navigateToPage(BuildContext context, String title) {
     switch (title) {
       case 'Hotels':
-      // Navigate to the Hotels page
-        break;
-      case 'Parks':
-      // Navigate to the Parks page
         break;
       case 'Clubs':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ClubMap()), // Replace with your Hotels page widget
+          MaterialPageRoute(
+              builder: (context) =>
+                  HomeScreen()), // Replace with your Hotels page widget
         );
-      // Navigate to the Clubs page
+        // Navigate to the Hotels page
+        break;
+      case 'Parks':
+        // Navigate to the Parks page
+        break;
+      case 'Clubs':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  ClubMap()), // Replace with your Hotels page widget
+        );
+        // Navigate to the Clubs page
         break;
       case 'Craft shops':
-      // Navigate to the Craft shops page
+        // Navigate to the Craft shops page
         break;
       case 'National Parks':
-      // Navigate to the National Parks page
+        // Navigate to the National Parks page
         break;
       case 'Nightlife':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => NightLife()), // Replace with your Hotels page widget
+          MaterialPageRoute(
+              builder: (context) =>
+                  NightLife()), // Replace with your Hotels page widget
         );
-      // Navigate to the Nightlife page
+        // Navigate to the Nightlife page
         break;
       case 'Amusement Parks':
-      // Navigate to the Amusement Parks page
+        // Navigate to the Amusement Parks page
         break;
       case 'Concerts':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Concerts()), // Replace with your Hotels page widget
+          MaterialPageRoute(
+              builder: (context) =>
+                  Concerts()), // Replace with your Hotels page widget
         );
-      // Navigate to the Concerts page
+        // Navigate to the Concerts page
         break;
       case 'Malls':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MallView()), // Replace with your Hotels page widget
+          MaterialPageRoute(
+              builder: (context) =>
+                  MallView()), // Replace with your Hotels page widget
         );
-      // Navigate to the Malls page
+        // Navigate to the Malls page
         break;
       case 'Game Stations':
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => GameStations()), // Replace with your Hotels page widget
+          MaterialPageRoute(
+              builder: (context) =>
+                  GameStations()), // Replace with your Hotels page widget
         );
-      // Navigate to the Game Stations page
+        // Navigate to the Game Stations page
         break;
       default:
-      // Handle other cases or show an error message
+        // Handle other cases or show an error message
         break;
     }
   }
-
 }
+
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
 
@@ -401,7 +456,7 @@ class HomeAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
-            onTap: (){},
+            onTap: () {},
             child: Container(
               padding: EdgeInsets.all(5.0),
               decoration: BoxDecoration(
@@ -409,13 +464,13 @@ class HomeAppBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 6.0,
+                    color: Colors.black,
+                    blurRadius: 6.0,
                   ),
                 ],
               ),
               child: Icon(
-                  Icons.sort_rounded,
+                Icons.sort_rounded,
               ),
             ),
           ),
@@ -425,16 +480,14 @@ class HomeAppBar extends StatelessWidget {
                 Icons.location_on,
                 color: Colors.teal,
               ),
-              Text("Uganda", style: TextStyle(
-                  fontFamily: "Merienda",
-                  fontSize: 18.0),
+              Text(
+                "Uganda",
+                style: TextStyle(fontFamily: "Merienda", fontSize: 18.0),
               ),
             ],
           ),
           InkWell(
-            onTap: (){
-
-            },
+            onTap: () {},
             borderRadius: BorderRadius.circular(12.0),
             child: Container(
               padding: EdgeInsets.all(5.0),
@@ -445,7 +498,7 @@ class HomeAppBar extends StatelessWidget {
                     color: Colors.black,
                     blurRadius: 6.0,
                   ),
-                  ],
+                ],
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Icon(
@@ -459,4 +512,3 @@ class HomeAppBar extends StatelessWidget {
     );
   }
 }
-

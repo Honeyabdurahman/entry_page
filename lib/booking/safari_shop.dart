@@ -18,7 +18,7 @@ class _SafariShopState extends State<SafariShop> {
           Align(
             alignment: Alignment.topLeft,
             child: MaterialButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -26,7 +26,10 @@ class _SafariShopState extends State<SafariShop> {
                   ),
                 );
               },
-              child: Icon(Icons.arrow_back_ios, color: Colors.red,),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.red,
+              ),
             ),
           ),
           Center(
@@ -63,31 +66,43 @@ class _SafariShopState extends State<SafariShop> {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.location_on, color: Colors.lightGreen,),
-                        Text("Mt.Rwenzori, Mt.Elgon, ", style: TextStyle(fontSize: 10,),),
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.lightGreen,
+                        ),
+                        Text(
+                          "Mt.Rwenzori, Mt.Elgon, ",
+                          style: TextStyle(
+                            fontSize: 10,
+                          ),
+                        ),
                         CircleAvatar(
                           child: Image.asset("images/craftshop.jpg"),
                         ),
-
                       ],
                     ),
-                    Text("Sarah's Craft shop", style: TextStyle(fontSize: 15.0),),
-                    Text("Lorem Ipsum is simply dummy text of the printing "
-                        "and typesetting industry. Lorem Ipsum has been the industry's standard "
-                        "dummy text ever since the 1500s, when an unknown printer took", style: TextStyle(fontSize: 12.0,),),
+                    Text(
+                      "Sarah's Craft shop",
+                      style: TextStyle(fontSize: 15.0),
+                    ),
+                    Text(
+                      "Lorem Ipsum is simply dummy text of the printing "
+                      "and typesetting industry. Lorem Ipsum has been the industry's standard "
+                      "dummy text ever since the 1500s, when an unknown printer took",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                      ),
+                    ),
                     Align(
                       alignment: Alignment.bottomRight,
                       child: MaterialButton(
-
-                        onPressed: (){
-
-                        },
-                        child: Icon(Icons.arrow_forward_ios, color: Colors.lightGreen,
+                        onPressed: () {},
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.lightGreen,
                         ),
                       ),
                     ),
-
-
                   ],
                 ),
               ),

@@ -24,8 +24,11 @@ class _MenuPageState extends State<MenuPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder:(context)=> ProfileChange()),);
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileApp()),
+                );
               },
               child: const CircleAvatar(
                 radius: 50,
@@ -52,7 +55,10 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.settings),
               title: const Text('Settings'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Settings()),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Settings()),
+                );
                 // Handle settings navigation
               },
             ),
@@ -60,7 +66,12 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.credit_card),
               title: const Text('Credits'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Credits(),),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Credits(),
+                  ),
+                );
                 // Handle credits navigation
               },
             ),
@@ -68,8 +79,12 @@ class _MenuPageState extends State<MenuPage> {
               leading: Icon(Icons.info),
               title: const Text('Terms and Conditions'),
               onTap: () {
-                Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TermsandConditions(),),);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TermsandConditions(),
+                  ),
+                );
                 // Handle terms and conditions navigation
               },
             ),
